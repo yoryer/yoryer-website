@@ -25,9 +25,35 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yoryer.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: yoryer
-github_username:  yoryer
+github_username: yoryer
+linkedin_username: yoryer
+
+# Fields used by the theme 'minima'
+author: Jorge Noguera
+
+show_excerpts: true
+excerpt_separator: <!--more-->
+
+# New fields added to theme
+copyright: "Jorge Noguera"
+interests:
+  - ['flutter', 'Flutter']
+  - ['dart', 'Dart']
+  - ['android', 'Android']
+  - ['ios', 'iOS']
+  - ['firebase', 'Firebase']
+  - ['php', 'PHP']
+  # - ['swift', 'Swift']
+  # - ['objective-c', 'Objective-C']
+  # - ['kotlin', 'Kotlin']
+  - ['java', 'Java']
+  - ['javascript', 'Javascript']
+  - ['sketch', 'Sketch']
+  - ['homebrew', 'Homebrew']
+  - ['docker', 'Docker']
 
 # Build settings
+# Removed the gem theme 'minima' and added as a regular theme
 # theme: minima
 plugins:
   - jekyll-feed
