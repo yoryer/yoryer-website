@@ -1,0 +1,42 @@
+---
+layout: inner
+---
+
+{%- if site.posts.size > 0 -%}
+<h2 class="post-list-heading">{{ page.list_title | default: "Artículos del Blog" }}</h2>
+<hr />
+{%- for post in site.posts -%}
+<div class="row add-bottom">
+  <div class="twelve columns add-bottom">
+    <h3>
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+    </h3>
+    <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {{ post.date | date: date_format }}
+    </time>
+    {%- if post.author -%}
+    • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+        itemprop="name">{{ post.author }}</span></span>
+    {%- endif -%}
+    {%- if post.categories -%}
+    <br />
+      <span class="categories" style="text-transform: capitalize;"><i class="fa fa-tag"></i> {{ post.categories | join: ' • ' }}</span>
+      {%- endif -%}
+    {%- if site.show_excerpts -%}
+    <p></p>
+    {{ post.excerpt }}
+    {%- endif -%}
+
+  </div>
+
+  <hr />
+</div>
+
+{%- endfor -%}
+
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- endif -%}

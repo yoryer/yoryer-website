@@ -1,11 +1,37 @@
 <head>
+
+  <!--- Basic Page Needs -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yoryer - software developer</title>
+  <meta name="description" content="Jorge Noguera - yoryer - software developer">
+  <meta name="author" content="Jorge Noguera - yoryer">
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- SEO -->
   {%- seo -%}
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/default.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/layout.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/media-queries.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/magnific-popup.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/prism.css" | relative_url }}" />
+
+  <!-- Feed meta -->
   {%- feed_meta -%}
+
+  <!-- Google Analytics -->
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
+  {%- include google-analytics.html -%}
   {%- endif -%}
+
+  <!-- Script  -->
+  <script src="{{ "/assets/js/modernizr.js" | relative_url }}"></script>
+
+  <!-- Favicons -->
+  <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+
 </head>

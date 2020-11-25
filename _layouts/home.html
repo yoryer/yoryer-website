@@ -2,33 +2,102 @@
 layout: default
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<section id="about">
+  <div class="row">
+    <div class="three columns">
+      <img class="pull-left" alt="rounded-avatar-image" src="assets/images/rounded-avatar.png">
+    </div>
+    <div class="nine columns">
+      <h1 style="color: #fff;">Sobre mí</h1>
+      <p class="lead add-bottom">Mi nombre es <span style="font-weight: bold; color: #fff;">Jorge Noguera</span>, resido
+        en Paraguay y me desempeño como <span style="color: #fff;">desarrollador de software</span> desde hace más de 12
+        años.</p>
+      <p class="lead add-bottom">Además de trabajar como desarrollador también he tenido la oportunidad de trabajar
+        realizando <span style="color: #fff;">diseños de páginas web y aplicaciones móviles</span>.</p>
+      <p class="lead add-bottom">Mis otras pasiones además de la programación y la tecnología son el <a
+          href="https://es.wikipedia.org/wiki/Tereré" target="_blank">tereré</a>, el fútbol (hincha del <a
+          href="https://cerro.com.py" target="_blank">Club Cerro Porteño</a>) y los <a
+          href="https://www.reddit.com/r/MechanicalKeyboards/" target="_blank">teclados mecánicos</a>.</p>
+      <div class="row">
+        <div class="columns download">
+          <p>
+            <link rel="stylesheet" href="{{ "/assets/files/cv_jorge_noguera.pdf" | relative_url }}" />
+            <a href="{{ "/assets/files/cv_jorge_noguera.pdf" | relative_url }}" class="button" target="_blank"><i class="fa fa-download"></i>Descargar CV</a>
+          </p>
+        </div>
 
-  {{ content }}
+      </div> <!-- end row -->
+    </div> <!-- end .main-col -->
+  </div>
+</section> <!-- About Section End-->
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+<section id="blog" style="padding: 90px 0 72px; background: #fff;">
+  <div class="row add-bottom">
+    <div class="twelve columns">
+      <h1>Blog</h1>
+      <p class="lead add-bottom">Acá podés ver algunos de los artículos que escribí recientemente:</p>
+      <hr />
+    </div>
+    {%- for post in site.posts -%}
+    <div class="six columns add-bottom">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {{ post.date | date: date_format }}
+      <h3><a href="{{ post.url }}">{{ post.title | escape }}</a></h3>
+      <p>
+        {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+      </p>
+    </div>
+    {%- endfor -%}
+  </div> <!-- Row End-->
+  <div class="row">
+    <div class="pull-right">
+      <a class="button" href="/blog/">Leer más artículos del blog&nbsp;&nbsp;&rarr;</a>
+    </div>
+  </div>
+</section>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
+<section id="interests">
+  <div class="row">
+    <div class="twelve columns collapsed">
+      <h1>Mis intereses</h1>
+      <div id="interests-wrapper" class="bgrid-sixths s-bgrid-sixths cf">
 
-</div>
+        {%- for item in site.interests -%}
+        <div class="columns interests-item">
+          <div class="item-wrap" style="padding: 1em;">
+            <img
+              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/{{ item[0] }}/{{ item[0] }}.png" />
+            <div class="overlay" onclick="javascript:window.open('https://github.com/topics/{{ item[0] }}', '_blank');">
+              <div class="interests-item-meta">
+                <h5>{{ item[1] }}</h5>
+              </div>
+            </div>
+            <div class="link-icon"><i class="fa fa-external-link"></i></div>
+          </div>
+        </div>
+        {%- endfor -%}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="styles" style="padding: 90px 0 72px; background: #fff;">
+  <div class="row add-bottom">
+    <div class="twelve columns add-bottom">
+
+      <h3>Una frase...</h3>
+
+      <blockquote cite="https://www.goodreads.com/quotes/8956696-don-t-cling-to-a-mistake-just-because-you-spent-a">
+        <p>Don't cling to a mistake just because you spent a lot of time making it.</p>
+        <cite>
+          <a target="_blank"
+            href="https://www.goodreads.com/quotes/8956696-don-t-cling-to-a-mistake-just-because-you-spent-a">Aubrey de
+            Grey</a>
+        </cite>
+      </blockquote>
+
+    </div>
+
+    <hr />
+  </div>
+</section>

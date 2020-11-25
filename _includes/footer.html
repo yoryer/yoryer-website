@@ -1,35 +1,48 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+<footer>
+  <div class="row">
+    <div class="twelve columns">
 
-  <div class="wrapper">
+      <ul class="social-links">
+        <li><a
+            href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><i
+              class="fa fa-linkedin"></i></a></li>
+        <li><a
+            href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><i
+              class="fa fa-github"></i></a></li>
+        <li><a href="mailto:{{ site.email| cgi_escape | escape }}"><i
+              class="fa fa-envelope"></i></a></li>
+        <li><a href="{{ 'feed.xml' | relative_url }}"><i
+              class="fa fa-rss-square"></i></a></li>
+      </ul>
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+      <ul class="copyright">
+        <li>&copy; {{ 'now' | date: '%Y' }} {{ site.copyright }}</li>
+        <li>Powered by <a title="Jekyll" href="https://jekyllrb.com"
+            target="_blank">Jekyll</a></li>
+        <li>Design by <a title="Styleshout" href="http://www.styleshout.com/"
+            target="_blank">Styleshout</a></li>
+      </ul>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
     </div>
+
+    <div id="go-top" style="display: block;"><a class="smoothscroll"
+        title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
 
   </div>
 
-</footer>
+</footer> <!-- Footer End-->
+
+<!-- Java Script
+ ================================================== -->
+<script
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript"
+  src="{{ "/assets/js/jquery-migrate-1.2.1.min.js" | relative_url }}"></script>
+
+<script src="{{ "/assets/js/jquery.flexslider.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/waypoints.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/jquery.fittext.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/magnific-popup.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/init.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/prism.js" | relative_url }}"></script>
