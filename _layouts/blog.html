@@ -21,7 +21,12 @@ layout: inner
     • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
         itemprop="name">{{ post.author }}</span></span>
     {%- endif -%}
+    {%- if post.categories -%}
+    <br />
+      <span class="categories" style="text-transform: capitalize;"><i class="fa fa-tag"></i> {{ post.categories | join: ' • ' }}</span>
+      {%- endif -%}
     {%- if site.show_excerpts -%}
+    <p></p>
     {{ post.excerpt }}
     {%- endif -%}
 

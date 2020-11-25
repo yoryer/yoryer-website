@@ -20,11 +20,11 @@ layout: inner
       {%- endif -%}
       <br />
       {%- if page.categories -%}
-      <span class="categories"><i class="fa fa-tag"></i> {{ page.categories | join: ', ' }}</span>
+      <span class="categories" style="text-transform: capitalize;"><i class="fa fa-tag"></i> {{ page.categories | join: ' • ' }}</span>
       {%- endif -%}
     </p>
   </div>
-
+  <hr />
   <div class="post-content e-content blog-post" itemprop="articleBody">
     {{ content }}
   </div>

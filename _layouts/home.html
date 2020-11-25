@@ -42,7 +42,6 @@ layout: default
     <div class="six columns add-bottom">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {{ post.date | date: date_format }}
       <h3><a href="{{ post.url }}">{{ post.title | escape }}</a></h3>
-
       <p>
         {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
       </p>
